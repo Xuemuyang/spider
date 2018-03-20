@@ -2,7 +2,7 @@
 
 A crawler made by Node.js
 
-用Node.js实现一个命令行小爬虫，使用Puppeteer模拟用户操作获取网页快照，和图片搜索功能。
+用Node.js实现一个命令行小爬虫，使用Puppeteer模拟用户操作获取网页快照，以及实现图片搜索功能。
 
 ## 使用方法
 
