@@ -15,7 +15,7 @@ const srcToImg = require('./helper/srcToImg');
     console.log('reset viewport');
     
     await page.focus('#kw');
-    await page.keyboard.sendCharacter('提莫');
+    await page.keyboard.sendCharacter('js');
     await page.keyboard.down('Enter');
     console.log('go to search list');
 
@@ -29,6 +29,8 @@ const srcToImg = require('./helper/srcToImg');
         console.log(`get ${srcs.length} images, start download`);
 
         srcs.forEach(async src => {
+            //sleep
+            await page.waitFor(200);
             await srcToImg(src, mn);
         });
 
