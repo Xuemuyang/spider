@@ -2,5 +2,7 @@ const path = require('path');
 
 module.exports = {
     screenshot: path.resolve(__dirname, '../../screenshot'),
-    mn: path.resolve(__dirname, '../../mn')
+    mn: path.resolve(__dirname, '../../mn'),
+    address: 'https://baidu.com',
+    content: '提莫'
 };

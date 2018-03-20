@@ -1,8 +1,10 @@
 const puppeteer = require('puppeteer');
 const { mn } = require('./config/default');
 const srcToImg = require('./helper/srcToImg');
+const conf = require('./config/default');
 
-(async () => {
+module.exports = async (config) => {
+    const content = config ? config : conf.content;
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.goto('https://image.baidu.com/');
@@ -15,7 +17,7 @@ const srcToImg = require('./helper/srcToImg');
     console.log('reset viewport');
     
     await page.focus('#kw');
-    await page.keyboard.sendCharacter('js');
+    await page.keyboard.sendCharacter(content);
     await page.keyboard.down('Enter');
     console.log('go to search list');
 
@@ -36,4 +38,4 @@ const srcToImg = require('./helper/srcToImg');
 
         await browser.close();
     });
-})();
+};
